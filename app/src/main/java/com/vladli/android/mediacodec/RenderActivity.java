@@ -55,6 +55,13 @@ public class RenderActivity extends Activity implements SurfaceHolder.Callback {
         mDecoder.stop();
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        mEncoder.stop();
+        mDecoder.stop();
+    }
+    
     class MyEncoder extends VideoEncoder {
 
         SurfaceRenderer mRenderer;
